@@ -8,12 +8,12 @@ class PopupDialog extends StatelessWidget {
   final VoidCallback onConfirm;
 
   const PopupDialog({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
     required this.onCancel,
     required this.onConfirm,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +32,12 @@ class PopupDialog extends StatelessWidget {
       actions: <Widget>[
         TextButton(
           onPressed: onCancel,
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
         ElevatedButton(
           
           onPressed: onConfirm,
-          child: Text('Confirm'),
+          child: const Text('Confirm'),
         ),
       ],
     );
@@ -76,7 +76,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surfaceContainer,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
         ),
@@ -87,14 +87,14 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
         children: [
           Text(
             widget.title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           widget.content,
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Align(
             alignment: Alignment.bottomRight,
             child: ElevatedButton(
@@ -110,7 +110,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surfaceContainer,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
         ),
@@ -121,14 +121,14 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
         children: [
           Text(
             widget.title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Expanded(child: widget.content),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
          ],
       ),
     );
